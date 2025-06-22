@@ -307,6 +307,27 @@ document.querySelectorAll('.contact-details a').forEach(link => {
     });
 });
 
+// Certificate image popup modal
+document.querySelectorAll('.certificate-img').forEach(img => {
+    img.addEventListener('click', function() {
+        // Create modal elements
+        const modal = document.createElement('div');
+        modal.className = 'certificate-modal';
+        modal.innerHTML = `
+            <div class="certificate-modal-content">
+                <span class="certificate-modal-close">&times;</span>
+                <img src="${this.src}" alt="Certificate" />
+                <p>${this.getAttribute('data-description') || ''}</p>
+            </div>
+        `;
+        document.body.appendChild(modal);
+
+        // Close modal on click
+        modal.querySelector('.certificate-modal-close').onclick = () => modal.remove();
+        modal.onclick = (e) => { if (e.target === modal) modal.remove(); };
+    });
+});
+
 // Initialize all animations and interactions
 document.addEventListener('DOMContentLoaded', function() {
     // Add stagger animation to service cards
