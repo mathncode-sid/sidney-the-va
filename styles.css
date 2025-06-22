@@ -238,6 +238,22 @@ body {
     transform: translateY(-2px);
 }
 
+.btn-sample {
+    display: inline-block;
+    padding: 0.6em 1.4em;
+    background: var(--text-color); 
+    color: var(--background-color);
+    border: none;
+    border-radius: 0.4em;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(45, 108, 223, 0.08);
+    text-align: center;
+    text-decoration: none;
+    margin-top: 1rem; /* Add this line for spacing */
+}
+
 .profile-card {
     display: flex;
     justify-content: center;
